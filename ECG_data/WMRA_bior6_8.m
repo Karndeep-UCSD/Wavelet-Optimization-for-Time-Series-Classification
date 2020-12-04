@@ -50,7 +50,7 @@ function [cD1,cD2,cD3,cD4,cD5,cD6,cD7,cD8] = WMRA_bior6_8(X, show)
         figure(); subplot(5,2,1); plot(X, 'k'); title('input')
         subplot(5,2,2); hold on;
         plot([1:126], cD1, 'k'); 
-        plot([127:189], cD2, 'b');
+        plot([127:189], cD2, 'g');
         plot([190:221], cD3, 'r');
         plot([222:237], cD4, 'c');
         plot([238:245], cD5, 'm');

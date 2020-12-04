@@ -1,7 +1,10 @@
 
 fileList = dir('C:\Users\19095\Documents\ECE251C\ECG_data\*.atr');
 
-for i = 1:length(fileList)
+% Wavelet Filters
+[LoD,HiD,LoR,HiR] = wfilters('bior6.8');
+
+for i = 1%:length(fileList)
     
     recordName = fileList(i).name(1:end-4);
     
@@ -9,11 +12,13 @@ for i = 1:length(fileList)
     [ann,type]=rdann( recordName , 'atr' ) ;
     [signal,Fs,t]=rdsamp( recordName , 1 ) ;
 
-    % ann = index of a beat
-    % type = categorize that beat
-    % signal = EEG signal
-    % t = time variable for EEG signal
-    % Fs = sampling rate
+    %{
+    ann = index of a beat
+    type = categorize that beat
+    signal = EEG signal
+    t = time variable for EEG signal
+    Fs = sampling rate
+    %}
     
     % Preallocate space
     beats = zeros(252,length(ann));
@@ -26,10 +31,7 @@ for i = 1:length(fileList)
     end
 
     % Test beat
-%     [c1,c2,c3,c4,c5,c6,c7,c8] = WMRA_bior6_8(beats(:,100), true);
-
-    % Wavelet Filters
-    [LoD,HiD,LoR,HiR] = wfilters('bior6.8');
+    [c1,c2,c3,c4,c5,c6,c7,c8] = WMRA_bior6_8(beats(:,100), true);
 
     % Level 1
     cD1 = filter(HiD,1,beats,[],1);
@@ -78,7 +80,7 @@ for i = 1:length(fileList)
     % Save Data
     filenameWMRA = 'C:\Users\19095\Documents\ECE251C\ECG_data\WMRA\' + string(recordName) + '_WMRA.mat';
 %     filenameANNO = 'C:\Users\19095\Documents\ECE251C\ECG_data\WMRA\' + string(recordName) + '_ANNO.mat';
-    save(filenameWMRA, 'wav_out', 'type');
+%     save(filenameWMRA, 'wav_out', 'type');
 
 end
 

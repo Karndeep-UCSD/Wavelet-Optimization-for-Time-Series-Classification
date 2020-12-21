@@ -28,8 +28,9 @@ end
 
 p = 1; 
 for i = 100:236
-    dataPath = strcat(pwd, '/ECG_data/Raw_Beat_CSV/', int2str(i), '_seg.mat'); %get path
-    
+%     dataPath = strcat(pwd, '/ECG_data/Raw_Beat_CSV/', int2str(i), '_seg.mat'); %get path
+    dataPath = strcat('C:/Users/19095/Documents/ECE251C/ECG_data/Raw_Beat_CSV/', int2str(i), '_seg.mat'); %get path
+
     if (exist(dataPath,  'file') == 2)
         % load File, Labels, Data
         dataStruct = load(dataPath); 
@@ -59,7 +60,6 @@ clear classToRmv char key data_temp labels_temp dataStruct rmvIndex p
 
 %% Define testing and training data for each of the 10 folds
 
-%define Test datasets for each of the 10-fold cross val
 fold.fold1 = [1, 2, 10, 18, 37];
 fold.fold2 = [6, 7, 8, 11, 23];
 fold.fold3 = [5, 12, 13, 14, 29];
@@ -110,9 +110,11 @@ for i = 1:10
 
 end
 
-% keyboard;
-%% select data
-totalScore = 0;
+%% Train and test classifier
+
+scores = [];
+classes = ['A', 'L', 'N', 'R', 'V'];
+confMat = zeros(10,length(classes), length(classes));
 for i = 1:10
     % Grab the train and test data for fold i
     key = strcat('fold', string(i));
@@ -139,12 +141,34 @@ for i = 1:10
     % predict and get score
     pred = predict(model, redTestData);
     score = 0;
-    for i = 1:length(pred)
-        score = score + strcmp(pred(i), testLabels(i));
+    for j = 1:length(pred)
+        score = score + strcmp(pred(j), testLabels(j));
     end
     score = score/length(pred);
-    totalScore = totalScore + score;
+    scores = [scores, score];
+    
+    
+    % Confusion Matrix
+    for k = 1:length(pred)
+        actIndex = find(classes == testLabels(k)); %index of actual label in classes
+        predIndex = find(classes == pred(k)); %index of predicted label in classes
+        confMat(i, actIndex(1,1) , predIndex(1,1)) = confMat(i, actIndex(1,1) , predIndex(1,1)) + 1;
+    end
+    
 end
 
-OverallScore = totalScore/10;
+OverallScore = mean(scores);
 
+% visualize Confusion matrices for CV
+for i  = 1:10
+    C = squeeze(confMat(i,:,:));
+    C = C./sum(C,2);
+    figure(1), subplot(2,5,i),imagesc(C), title(i)
+    xticks([1 2 3 4 5])
+    xticklabels({'A','L','N','R','V'})
+    xlabel('Actual Class')
+    yticks([1 2 3 4 5])
+    yticklabels({'A','L','N','R','V'})
+    ylabel('Predicted Class')
+end
+% sgtitle('10 fold Validation results')

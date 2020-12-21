@@ -1,6 +1,6 @@
 function errorFinal = evalWavelet(T,trainDataStruct,trainLabelStruct,testDataStruct, testLabelStruct)
-% Function used to evaluate the accuracy the wavelet corresponding to the 
-% input thetas.
+% Function used to evaluate the accuracy of the wavelet corresponding to the input thetas.
+% Essentially our optimizer's cost function.
 
     % make wavelets
     [HiD, LoD] = myWaveletGenerator(T);
@@ -17,11 +17,9 @@ function errorFinal = evalWavelet(T,trainDataStruct,trainLabelStruct,testDataStr
         testData = testDataStruct.(key);
         testLabels = testLabelStruct.(key);
         
-        
         % wavelet transform
         wavTrainData = myWMRA(trainData', HiD, LoD);
         wavTestData = myWMRA(testData', HiD, LoD);
-
 
         % PCA dimension reduction
         numDims = 12;
@@ -30,16 +28,13 @@ function errorFinal = evalWavelet(T,trainDataStruct,trainLabelStruct,testDataStr
         redTrainData = wavTrainData * coeff; %reduced train data
         redTestData = wavTestData * coeff; %reduce test data
 
-
-        % SVM
-        % train
+        % train SVM
         t = templateSVM('KernelFunction','gaussian');
         model = fitcecoc(redTrainData,trainLabels,'Learners',t);
         
         % predict and get score
         pred = predict(model, redTestData);
 
-        
         score = 0;
         for j = 1:length(pred)
             score = score + strcmp(pred(j), testLabels(j));

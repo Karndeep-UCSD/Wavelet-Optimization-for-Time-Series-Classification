@@ -66,8 +66,8 @@ end
 id = 1;
 for j = 1:48 %loop through all data, allocating to array as necessary
     key = strcat('key', string(j));
-    labels_temp = labels.(key); %get relevant data peice
-    data_temp = data.(key); %get corresponging labels
+    labels_temp = labels.(key); 
+    data_temp = data.(key); 
     
     if size(data_temp,1)>nSamples
         train = data_temp(1:nSamples,:);
@@ -88,7 +88,8 @@ for j = 1:48 %loop through all data, allocating to array as necessary
 end
 
 keyboard;
-%% select data
+%% Train and test classifier
+
 scores = [];
 classes = ['A', 'L', 'N', 'R', 'V'];
 confMat = zeros(length(classes), length(classes));

@@ -171,4 +171,4 @@ for i  = 1:10
     yticklabels({'A','L','N','R','V'})
     ylabel('Predicted Class')
 end
-% sgtitle('10 fold Validation results')
+sgtitle('10 fold Validation results')

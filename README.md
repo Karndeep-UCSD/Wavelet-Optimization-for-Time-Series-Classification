@@ -79,7 +79,14 @@ This repository uses function from the following Matlab toolboxes.
    Optimization_BeatBased.m
    Optimization_RecordBased.m
    ```
-   Optimization is accomplished using one of two data schemes. 
+  Optimization is accomplished using one of two data schemes.
+  <dl>  
+   <dt> Record Based </dt>
+   <dd>- Patients who's data is used in the training set are excluded from the testing set, and vice versa. </dd>
+   <dt> Beat Based </dt>
+   <dd>- Beats from all patients are randomly split into testing and training set. </dd>
+  </dl>
+Below are the parameters and accuracy of a particular particle as the optimization progresses. It demonstrates how the algorithm is able to move towards maximal classification accuracy. 
 
 <br />
 <p align="center">

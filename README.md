@@ -79,35 +79,36 @@ This repository uses function from the following Matlab toolboxes.
    Optimization_BeatBased.m
    Optimization_RecordBased.m
    ```
-  Optimization is accomplished using one of two data schemes.
-  <dl>  
-   <dt> Record Based </dt>
-   <dd>- Patients who's data is used in the training set are excluded from the testing set, and vice versa. </dd>
-   <dt> Beat Based </dt>
-   <dd>- Beats from all patients are randomly split into testing and training set. </dd>
-  </dl>
-Below are the parameters and accuracy of a particular particle as the optimization progresses. It demonstrates how the algorithm is able to move towards maximal classification accuracy. 
+   Optimization is accomplished using one of two data schemes.
+   <dl>  
+     <dt> Record Based </dt>
+     <dd>- Patients who's data is used in the training set are excluded from the testing set, and vice versa. </dd>
+     <dt> Beat Based </dt>
+     <dd>- Beats from all patients are randomly split into testing and training set. </dd>
+   </dl>
+   Below are the parameters and accuracy of a particular particle as the optimization progresses. It demonstrates how the algorithm is able to move towards maximal classification accuracy. 
 
-<br />
-<p align="center">
+  <p align="center">
     <img src="images/500_optim_StepSize1.gif" width="500" height="400">
   </p>
-   
+
   
-   
-   
 3. Testing
    ```sh
    Test_OverallPerformance.m
    Test_PatientSpecific.m
    ```
-<br />
-<p align="center">
-    <img src="images/Confusion_Matrix_Bior6.8.png"  width="256" height="193">
-    <img src="images/Confusion_Matrix_Beat_Based.png"  width="256" height="193">
-    <img src="images/Confusion_Matrix_Record_Based.png"  width="256" height="193">
-  </p>
-
+   <p align="center">
+        <img src="images/Testing_Results.PNG" width="500" height="400" align='left'>
+   </p>
+   <p>
+   Once both mother wavelet were successfully optimized, they were compared to the biorthogonal6.8 wavelet as a control. 
+    </p>
+    <p align="center">
+        <img src="images/Confusion_Matrix_Bior6.8.png"  width="256" height="193">
+        <img src="images/Confusion_Matrix_Beat_Based.png"  width="256" height="193">
+        <img src="images/Confusion_Matrix_Record_Based.png"  width="256" height="193">
+    </p>
 <!-- CONTACT -->
 ## Contact
 

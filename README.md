@@ -49,9 +49,15 @@ Two optimization schemes were implemented, record based and beat based, resultin
   <img src="images/Optimization_Flow_chart.png" width="450" height="400" >
 </p>
 
+<p>
 The first flow chart summaries the ECG classification framework propsed by Liu et al. that this work utilizes. 
 The second chart outlines the implimented optimization scheme. Particle swarm optimization was used to minimize the classification error of the SVM. A global minimum was achieved by tuning the parameters of the wavelet used in the feature transformation.
+</p>
 
+
+<p>  
+A full project report can be found in this repository - [Paper]( https://github.com/Karndeep-UCSD/Wavelet-Optimization-for-Time-Series-Classification/Project_Report.pdf) 
+</p>
 
 
 <!-- Prerequisites -->

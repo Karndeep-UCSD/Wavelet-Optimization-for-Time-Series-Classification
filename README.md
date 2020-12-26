@@ -13,11 +13,7 @@
   <h3 align="center">Wavelet Optimization for Time Series Classification</h3>
 
   <p align="center">
-    Robust real-time classification of electrocardiograms relies upon effective feature extraction and reduction. 
-     This work utilizes wavelet multi-resolution analysis(WMRA) in conjunction with principal component analysis(PCA) 
-    to generate high quality, low-dimesional feature vectors. These vectors are classified as one of six types of heart 
-    beats using a multiclass Support Vector Machine(SVM) classifier. Application specific mother wavelets were determined
-    via Particle Swarm Optimization(PSO).
+    Robust real-time classification of electrocardiograms relies upon effective feature extraction and reduction. This work utilizes wavelet multi-resolution analysis(WMRA) in conjunction with principal component analysis(PCA) to generate high quality, low-dimesional feature vectors. These vectors are classified as one of six types of heart beats using a multiclass Support Vector Machine(SVM) classifier. Application specific mother wavelets were determined via Particle Swarm Optimization(PSO).
     <br />
   </p>
 </p>
@@ -41,8 +37,20 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<p>
+This work was conducted with the goal of defining a new approach to extract low dimensional features from time series ECG data for use in classification. Wavelet multi-resolution analysis is often utilized to extract a feature set from time-series data. Rather than selecting a predefined wavelet, a custom wavelet is found via particle swarm optimization. Once selected, wavelet features undergo dimensional reduction by principal component analysis before being used to train a one-vs-one support vector machine classifier. 
+</p>
+<p>
+Two optimization schemes were implemented, record based and beat based, resulting in two different optimized wavelets. Both wavelets were evaluated with 10-fold cross validation, using a train-test split of 20/80 selected at random, as well as a patient specific scheme where only initial data, 300 beats or 60 beats, was used for training. The wavelet optimized from the record based scheme achieved <b> 98.79%, 97.54%, and 94.58% classification accuracy,</b> respectively on the three evaluation scenarios. The wavelet optimized from the beat based scheme achieved <b>98.46%. 97.80%, and 94.05%,<b> respectively on the three evaluation scenarios. 
+</p>
+  
+<p align="center">
+  <img src="images/Classifier_Flow_chart.png" width="450" height="400" >
+  <img src="images/Optimization_Flow_chart.png" width="450" height="400" >
+</p>
 
-
+The left flow chart summaries the ECG classification framework propsed by Liu et al. that this work utilizes. 
+The right chart demonstrates the implimented optimization scheme. Particle swarm optimization was used to minimize the classification error of the SVM. A global minimum was achieved by tuning the parameters of the wavelet used in the feature transformation.
 
 
 
@@ -72,7 +80,7 @@ This repository uses function from the following Matlab toolboxes.
    ```
 <br />
 <p align="center">
-    <img src="images/500_optim_StepSize1.gif" alt="Logo" width="500" height="400">
+    <img src="images/500_optim_StepSize1.gif" width="500" height="400">
   </a>
    
    
@@ -84,10 +92,10 @@ This repository uses function from the following Matlab toolboxes.
    ```
 <br />
 <p align="center">
-    <img src="images/Confusion_Matrix_Bior6.8.png" alt="Logo" width="256" height="193">
-    <img src="images/Confusion_Matrix_Beat_Based.png" alt="Logo" width="256" height="193">
-    <img src="images/Confusion_Matrix_Record_Based.png" alt="Logo" width="256" height="193">
-  </a>
+    <img src="images/Confusion_Matrix_Bior6.8.png"  width="256" height="193">
+    <img src="images/Confusion_Matrix_Beat_Based.png"  width="256" height="193">
+    <img src="images/Confusion_Matrix_Record_Based.png"  width="256" height="193">
+  </p>
 
 <!-- CONTACT -->
 ## Contact

@@ -86,7 +86,7 @@ This repository uses function from the following Matlab toolboxes.
      <dt> Beat Based </dt>
      <dd>- Beats from all patients are randomly split into testing and training set. </dd>
    </dl>
-   Below are the parameters and accuracy of a particular particle as the optimization progresses. It demonstrates how the algorithm is able to move towards maximal classification accuracy. 
+   Below are the parameters and accuracy of an example particle with respect to time as the optimization progresses. 
 
   <p align="center">
     <img src="images/500_optim_StepSize1.gif" width="500" height="400">

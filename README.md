@@ -65,7 +65,7 @@ This repository uses function from the following Matlab toolboxes.
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage and Results
 
 1. Loading Data
    ```sh
@@ -79,35 +79,42 @@ This repository uses function from the following Matlab toolboxes.
    Optimization_BeatBased.m
    Optimization_RecordBased.m
    ```
-  Optimization is accomplished using one of two data schemes.
-  <dl>  
-   <dt> Record Based </dt>
-   <dd>- Patients who's data is used in the training set are excluded from the testing set, and vice versa. </dd>
-   <dt> Beat Based </dt>
-   <dd>- Beats from all patients are randomly split into testing and training set. </dd>
-  </dl>
-Below are the parameters and accuracy of a particular particle as the optimization progresses. It demonstrates how the algorithm is able to move towards maximal classification accuracy. 
+   Optimization is accomplished using one of two data schemes.
+   <dl>  
+     <dt> Record Based </dt>
+     <dd>- Patients who's data is used in the training set are excluded from the testing set, and vice versa. </dd>
+     <dt> Beat Based </dt>
+     <dd>- Beats from all patients are randomly split into testing and training set. </dd>
+   </dl>
+   Below are the parameters and accuracy of an example particle with respect to time as the optimization progresses. 
 
-<br />
-<p align="center">
+  <p align="center">
     <img src="images/500_optim_StepSize1.gif" width="500" height="400">
   </p>
-   
-  
-   
-   
+
 3. Testing
    ```sh
    Test_OverallPerformance.m
    Test_PatientSpecific.m
    ```
-<br />
-<p align="center">
-    <img src="images/Confusion_Matrix_Bior6.8.png"  width="256" height="193">
-    <img src="images/Confusion_Matrix_Beat_Based.png"  width="256" height="193">
-    <img src="images/Confusion_Matrix_Record_Based.png"  width="256" height="193">
-  </p>
-
+   <p align="center">
+        <img src="images/Testing_Results.PNG" width="530" height="400" align='left'>
+   </p>
+   <p>
+   Once both mother wavelet were successfully optimized, they were compared to the biorthogonal6.8 wavelet as a control. For each wavelet, three tests were performed to quantify their performance. Each test utilized the wavelet feature based SVM framework discussed above. The first test consisted of randomly dividing 20% of all of the patient data into a training set, and using the remainder for testing.Under this condition, both optimized wavelets outperformed the standard wavelet by over 2% accuracy. The remaining tests consisted of training on fewer and fewer data points in a more realistic structure. An SVM was independently trained for each patient using the first 300 beats and 60 beats, roughly 5 minutes and 1 minute of data, respectively. In this temporally structured training method, the three wavelets performed identically, with none of them having a clear advantage. 
+    </p> <br>
+    <p align="center">
+        <img src="images/Confusion_Matrix_Bior6.8.png"  width="256" height="193">
+        <img src="images/Confusion_Matrix_Beat_Based.png"  width="256" height="193">
+        <img src="images/Confusion_Matrix_Record_Based.png"  width="256" height="193">
+    </p> <br>
+    
+    <p>
+    The above 3 Confusion matrices correspond to the random 20/80 split test for each of the wavelets. <b> Both optimized wavelets outperform standard wavelets in terms of specificity. </b> A more complete analysis of the results can be found in the accompanying paper.
+    </p>
+    
+    
+    
 <!-- CONTACT -->
 ## Contact
 

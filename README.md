@@ -58,15 +58,36 @@ This repository uses function from the following Matlab toolboxes.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Loading Data
-
-### Optimization
-
-### Testing
-
-
-
-
+1. Loading Data
+   ```sh
+   dataLoader2CSV.m
+   ```
+   Converts raw ECG data provided by MIT-BIH Arrhythmia Database to annotated and segmented CSV files.
+   Processed and prepared data can be found in the folder Raw_Beat_CSV
+   
+2. Optimization
+   ```sh
+   Optimization_BeatBased.m
+   Optimization_RecordBased.m
+   ```
+<br />
+<p align="center">
+    <img src="images/500_optim_StepSize1.gif" alt="Logo" width="500" height="400">
+  </a>
+   
+   
+   
+3. Testing
+   ```sh
+   Test_OverallPerformance.m
+   Test_PatientSpecific.m
+   ```
+<br />
+<p align="center">
+    <img src="images/Confusion_Matrix_Bior6.8.png" alt="Logo" width="256" height="193">
+    <img src="images/Confusion_Matrix_Beat_Based.png" alt="Logo" width="256" height="193">
+    <img src="images/Confusion_Matrix_Record_Based.png" alt="Logo" width="256" height="193">
+  </a>
 
 <!-- CONTACT -->
 ## Contact

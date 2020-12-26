@@ -65,7 +65,7 @@ This repository uses function from the following Matlab toolboxes.
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage and Results
 
 1. Loading Data
    ```sh

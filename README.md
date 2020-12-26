@@ -49,8 +49,8 @@ Two optimization schemes were implemented, record based and beat based, resultin
   <img src="images/Optimization_Flow_chart.png" width="450" height="400" >
 </p>
 
-The left flow chart summaries the ECG classification framework propsed by Liu et al. that this work utilizes. 
-The right chart demonstrates the implimented optimization scheme. Particle swarm optimization was used to minimize the classification error of the SVM. A global minimum was achieved by tuning the parameters of the wavelet used in the feature transformation.
+The first flow chart summaries the ECG classification framework propsed by Liu et al. that this work utilizes. 
+The second chart outlines the implimented optimization scheme. Particle swarm optimization was used to minimize the classification error of the SVM. A global minimum was achieved by tuning the parameters of the wavelet used in the feature transformation.
 
 
 
@@ -61,6 +61,7 @@ This repository uses function from the following Matlab toolboxes.
 * Statistics and Machine Learning toolbox
 * Optimization toolbox
 * Global Optimization toolbox
+* WFDB toolbox
 
 
 <!-- USAGE EXAMPLES -->
@@ -78,11 +79,14 @@ This repository uses function from the following Matlab toolboxes.
    Optimization_BeatBased.m
    Optimization_RecordBased.m
    ```
+   Optimization is accomplished using one of two data schemes. 
+
 <br />
 <p align="center">
     <img src="images/500_optim_StepSize1.gif" width="500" height="400">
-  </a>
+  </p>
    
+  
    
    
 3. Testing

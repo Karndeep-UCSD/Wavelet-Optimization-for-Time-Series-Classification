@@ -57,10 +57,9 @@ The second chart outlines the implimented optimization scheme. Particle swarm op
 
 <p>  
   
-A full project report can be found in this repository - [Paper]( https://github.com/Karndeep-UCSD/Wavelet-Optimization-for-Time-Series-Classification/Project_Report.pdf) 
+A full project report can be found in this repository - [Paper]( https://github.com/Karndeep-UCSD/Wavelet-Optimization-for-Time-Series-Classification/blob/master/Project_Report.pdf) 
 
 </p>
-
 
 
 

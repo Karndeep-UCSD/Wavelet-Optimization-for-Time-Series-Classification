@@ -10,7 +10,8 @@ clc; clear all; close all;
 p = 1; 
 for i = 100:236
     dataPath = strcat(pwd, '/ECG_data/Raw_Beat_CSV/', int2str(i), '_seg.mat'); %get path
-    
+    dataPath = strcat('C:/Users/19095/Documents/ECE251C/ECG_data/Raw_Beat_CSV/', int2str(i), '_seg.mat'); %get path
+
     if (exist(dataPath,  'file') == 2)
         % load File, Labels, Data
         dataStruct = load(dataPath); 

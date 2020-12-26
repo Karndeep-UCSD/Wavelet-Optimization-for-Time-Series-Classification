@@ -28,7 +28,7 @@
       <a href="#about-the-project">About The Project</a>
     </li>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage-and-results">Usage and Results</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -56,8 +56,12 @@ The second chart outlines the implimented optimization scheme. Particle swarm op
 
 
 <p>  
+  
 A full project report can be found in this repository - [Paper]( https://github.com/Karndeep-UCSD/Wavelet-Optimization-for-Time-Series-Classification/Project_Report.pdf) 
+
 </p>
+
+
 
 
 <!-- Prerequisites -->

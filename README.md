@@ -119,7 +119,7 @@ This repository uses function from the following Matlab toolboxes.
     
     <p>
   
-    The above 3 Confusion matrices correspond to the random 20/80 split test for each of the wavelets. <b> Both optimized wavelets outperform standard wavelets in terms of specificity. </b> A more complete analysis of the results can be found in the accompanying paper [Paper]( https://github.com/Karndeep-UCSD/Wavelet-Optimization-for-Time-Series-Classification/blob/master/Project_Report.pdf) 
+    The above 3 Confusion matrices correspond to the random 20/80 split test for each of the wavelets. <b> Both optimized wavelets outperform standard wavelets in terms of specificity. </b> A more complete analysis of the results can be found in the accompanying [paper]( https://github.com/Karndeep-UCSD/Wavelet-Optimization-for-Time-Series-Classification/blob/master/Project_Report.pdf) 
     
     </p>
     
